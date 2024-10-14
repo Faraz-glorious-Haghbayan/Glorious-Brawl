@@ -65,10 +65,10 @@ function scrollToTop() {
 
         if (window.innerWidth <= 768) {
             // Mobile video source
-            videoSource.src = 'video/mobile.mp4'; // Replace with your mobile video link
+            videoSource.src = 'mobile.mp4'; // Replace with your mobile video link
         } else {
             // Desktop video source
-            videoSource.src = 'video/mobilevid.mp4'; // Your original PC video
+            videoSource.src = 'mobilevid.mp4'; // Your original PC video
         }
 
         // Reload the video element to apply the new source
