@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="brawler.css">
+    <title>Barley Stats</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="glitch-text">Barley Stats</h1>
+        </div>
+        <div class="content">
+            <div class="brawler-image">
+                <img src="https://media.brawltime.ninja/brawlers/barley/model.webp?size=400" alt="Barley">
+            </div>
+            <div class="stats">
+                <h2>Stats</h2>
+                <div class="stat">
+                    <label for="health">Health:</label>
+                    <meter id="health" value="4200" min="0" max="13400">4200/13400</meter>
+                </div>
+                <div class="stat">
+                    <label for="damage">Damage per bottle:</label>
+                    <meter id="damage" value="1280" min="0" max="5000">1280/5000</meter>
+                </div>
+                <div class="stat">
+                    <label for="speed">Speed:</label>
+                    <meter id="speed" value="720" min="0" max="820">720/820</meter>
+                </div>
+                <div class="stat">
+                    <label for="reload">Reload Speed:</label>
+                    <meter id="reload" value="2000" min="0" max="500">2000/500</meter>
+                </div>
+                <div class="stat">
+                    <label for="range">Range:</label>
+                    <meter id="range" value="8.67" min="0" max="10">8.67/10</meter>
+                </div>
+                
+            </div>
+        </div>
+        <div class="backbutton">
+            <button onclick="window.history.back()">Go Back</button>
+        </div>
+    </div>
+</body>
+</html>

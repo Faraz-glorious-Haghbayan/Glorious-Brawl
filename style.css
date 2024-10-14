@@ -1,0 +1,592 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa; /* Light background color */
+
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #1e1e1e; /* Dark background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+}
+header h1 {
+    margin-bottom: 20px;
+    color: #ffcc00;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.nav-logo {
+    color: #ffffff;
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: rgb(255, 255, 255);
+    padding: 10px 15px;
+    transition: background-color 0.3s, border-radius 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: blue;
+    border-radius: 5px;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 4px;
+}
+
+.hamburger .line {
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+}
+
+#background-video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    filter: brightness(1); /* Slight dark overlay for better text contrast */
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+ }
+ #searchBar {
+    width: 50%;
+    padding: 1rem;
+    margin: 2rem auto;
+    display: block;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1.6rem;
+    outline: none;
+    transition: box-shadow 0.3s ease;
+}
+
+#searchBar:focus {
+    box-shadow: 0 0 8px rgba(29, 78, 216, 0.3); /* Focus effect */
+}
+
+
+#toggle-brawlers {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: darkblue;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#toggle-brawlers:hover {
+    background-color: blue;
+}
+
+
+
+
+
+.brawler-link {
+    color: #e9e9e9; /* Dark gray for softer contrast */
+    background-color: transparent; /* Keeps it transparent */
+    border: 2px solid #6d6d6d; /* Dark gray border */
+    padding: 10px 30px;
+    width: 100%;
+    font-weight: bold;
+    margin-top: 2%;
+    font-size: 1.5em;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    display: flex; 
+    justify-content: center; /* Centers horizontally */ 
+    align-items: center;
+}
+
+.brawler-link:hover {
+    background-color: darkblue; /* Slightly darker hover color */
+    color: #ffffff; /* Keep text white on hover */
+    border: 2px solid rgb(1, 1, 135); /* Match border color to hover background */
+    border-radius: 12px;
+    transform: translateY(-2px);
+}
+
+
+ /* Container styling for larger screens */
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Flexbox for mobile devices */
+@media (max-width: 768px) {
+    .container {
+        display: flex;
+        overflow-x: auto;
+        scroll-behavior: smooth; /* Smooth scrolling */
+        gap: 1rem; /* Reduce gap on mobile */
+        padding: 1rem;
+        flex-wrap: nowrap; /* Prevent wrapping of items */
+    }
+
+    .container div {
+        min-width: 250px; /* Ensure Brawler cards take up minimum width */
+        flex: 0 0 auto; /* Prevent shrinking or growing */
+    }
+}
+
+/* Brawler card styling */
+.container div {
+    border: 2px solid #101010;
+    background-color: darkblue;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Stronger shadow effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container div:hover {
+    background-color: #002366; /* Navy blue */
+    transform: scale(1.05);
+    border: 2px solid #fff;
+}
+
+/* Brawler image styling */
+div img {
+    width: auto; /* Adjusts the width automatically based on the height */
+    height: 200px; /* Set a fixed height */
+    display: block;
+    margin: 1rem auto; /* Center the image with space around it */
+    border-radius: 12px; /* Rounded image corners */
+    object-fit: contain; /* Ensures the full image is shown within the container */
+}
+
+/* Headings styling */
+h3 {
+    font-size: 2.4rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: #ffffff;
+}
+
+h2 {
+    font-size: 3.5rem;
+    text-align: center;
+    margin-top: 5%;
+}
+
+
+p {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    color: #d2d2d2;
+    text-align: center;
+    padding: 0 1rem;
+    overflow: hidden; /* Prevent text overflow */
+    text-overflow: ellipsis; /* Add ellipsis if text is too long */
+}
+
+.video-container {
+    position: relative;
+    width: 80%; /* Set the width to 80% */
+    margin: auto; /* Center the container */
+    overflow: hidden;
+    margin-top: 5%;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+}
+
+.background-video {
+    width: 100%; /* Ensure video takes the container's full width */
+    height: auto; /* Maintain aspect ratio */
+    filter: brightness(80%);
+}
+
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+    width:70%;
+    padding: 2% 0%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    border-radius: 5px;
+}
+
+
+.overlay-text{
+    color: red;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.overlay-text p{
+    color: rgb(202, 202, 202);
+    margin-top: 2%;
+    font-weight: bold;
+}
+
+
+/* Main news section styling */
+#news {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    background-color: #f9f9f9; 
+}
+
+#news h2 {
+    font-size: 3.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #1e1e1e;
+    letter-spacing: 2px;
+}
+
+.news-container {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+.news-item {
+    flex: 0 0 300px; /* Set a fixed width for each news item */
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    padding: 1rem;
+    text-align: center;
+}
+
+.news-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    transition: transform 0.5s ease;
+}
+
+.news-item h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin: 0.5rem 0;
+}
+
+.news-item p {
+    font-size: 1rem;
+    color: #666;
+    padding: 0 0.5rem;
+}
+
+.news-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.news-item:hover img {
+    transform: scale(1.05);
+}
+
+.cta-btn {
+    background-color: #f39c12; /* Bright color for attention */
+    padding: 15px 25px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 3%;
+}
+
+.cta-btn a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.cta-btn:hover {
+    background-color: #e67e22;
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+.brawlstat-container {
+    background-image: url("photo/Most\ loved.png");
+    background-size: cover;
+    background-position: center;
+    border-radius: 50px;
+    width: 70vw;
+    height: 80vh;
+    display: block;
+    margin: auto;
+    filter: brightness(0.7); /* Dark overlay for better contrast */
+    transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+.brawlstat-container:hover {
+    transform: scale(1.02); /* Slight zoom-in */
+    filter: brightness(1); /* Restore brightness on hover */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5); /* Add shadow for depth */
+}
+
+.brawlstat button{
+    background-color: #023dbc; /* Primary button color (orange-red) */
+    color: #fff; /* White text */
+    padding: 1% 3%; /* Button padding for a comfortable size */
+    border-radius: 30px; /* Rounded corners for a modern look */
+    font-size: 2rem; /* Font size */
+    font-weight: bold; /* Bold text */
+    border: none; /* Remove default border */
+    cursor: pointer; /* Pointer cursor on hover */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    text-transform: uppercase; /* All-caps for button text */
+    margin-top: 2%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-left: 14%;
+}
+
+.brawlstat button:hover {
+    background-color: #194ce6; /* Darken the button color on hover */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+    transform: translateY(-3px); /* Slight move up on hover */
+    color: black;
+}
+
+.brawlstat button:active {
+    transform: translateY(0); /* Reset position when clicked */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Adjust shadow when clicked */
+}
+
+
+
+.brawlstat h2{
+    margin-bottom: 3%;
+}
+
+/* About Us Section Styles */
+.about-us {
+    background-color: #f5f5f5; /* Light grey background */
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-container {
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    padding: 40px;
+    width: 80%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Light shadow effect */
+}
+
+.about-container h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333; /* Darker text for better readability */
+    text-align: center;
+}
+
+.about-container p {
+    font-size: 1.5em;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.about-container p strong {
+    color: #e63946; /* Highlighted color for your name */
+}
+
+.about-us button{
+    background-color: #023dbc; /* Primary button color (orange-red) */
+    color: #fff; /* White text */
+    padding: 2% 5%; /* Button padding for a comfortable size */
+    border-radius: 30px; /* Rounded corners for a modern look */
+    font-size: 2rem; /* Font size */
+    font-weight: bold; /* Bold text */
+    border: none; /* Remove default border */
+    cursor: pointer; /* Pointer cursor on hover */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    text-transform: uppercase; /* All-caps for button text */
+    margin-top: 2%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.about-us button:hover{
+    background-color: #194ce6; /* Darken the button color on hover */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+    transform: translateY(-3px); /* Slight move up on hover */
+    color: black;
+}
+
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 10%; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
+    background-color: transparent; /* Change color as desired */
+    border: none;
+    border-radius: 20px;
+    
+    cursor: pointer;
+    
+}
+
+#scrollToTopBtn img{
+    width: 80%; /* Adjust size as needed */
+    transition: transform 0.3s ease;
+}
+#scrollToTopBtn img:hover{
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        font-size: 1.5rem;
+        right: 0;
+        top: 60px;
+        background-color: #1e1e1e;
+        height: 10vh;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+    }
+
+    .nav-links.open {
+        transform: translateX(0);
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .video-container{
+        width: 90%;
+        height: 18vh;
+    }
+
+
+    .video-container{
+        margin: auto;
+        margin-top: 20%;
+    }
+    .overlay-text{
+        width: 70%;
+    }
+    .overlay-text h2{
+        font-size: 2rem;
+    }
+    .overlay-text p{
+        font-size: 1rem;
+    }
+
+    .about-container{
+        width: 100%;
+    }
+    
+    .news-container {
+        flex-direction: row;
+        gap: 2rem;
+    }
+
+    .news-container p{
+        color: #e4e4e4;
+        font-size: 1.4rem;
+    }
+    .news-container h3{
+        color: #fff;
+        font-size: 2rem;
+    }
+    .news-item{
+        background-color: darkblue;
+    }
+
+
+    #scrollToTopBtn{
+        font-size: 3rem;
+        border-radius: 15px;
+        bottom: 10%; /* Adjust as needed */
+    right: 20px;
+    }
+
+    .brawlstat-container{
+        width: 80%;
+        background-position: center;
+        background-size: cover;
+        height: 30vh;
+        filter: brightness(1);
+    }
+    
+}

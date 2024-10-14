@@ -1,0 +1,233 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and font styles */
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+    padding: 0 20px;
+}
+
+/* Header styles */
+header {
+    background-color: #00218b;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+}
+
+header p {
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+/* Main container styles */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Section heading styles */
+h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* Category list styles */
+.category-list {
+    display: flex;
+    flex-wrap: wrap; /* Allows buttons to wrap on smaller screens */
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 2rem;
+}
+
+.category-list button {
+    padding: 10px 20px;
+    background-color: #3300ff;
+    color: #ffffff;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1rem;
+}
+
+.category-list button:hover {
+    background-color: red;
+}
+
+/* Stats section styles */
+#stats {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#brawler-stats {
+    display: grid; /* Default to grid layout for PC */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 2rem; /* Space between cards */
+}
+
+/* Brawler card styles */
+.brawler-card {
+    background-color: darkblue;
+    color: #ffffff;
+    padding: 15px; /* Adjusted padding */
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.brawler-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.brawler-card img {
+    max-width: 100%;
+    height: 200px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+}
+
+.brawler-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.brawler-card p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.brawler-card a {
+    color: #e3b600;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.brawler-card a:hover {
+    color: #fff;
+}
+
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 10%; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
+    background-color: transparent; /* Change color as desired */
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+#scrollToTopBtn img{
+    width: 80%; /* Adjust size as needed */
+    transition: transform 0.3s ease;
+}
+#scrollToTopBtn img:hover{
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.4rem; /* Adjust header size for smaller screens */
+    }
+
+    header p {
+        font-size: 1rem; /* Smaller paragraph font */
+    }
+
+    h2 {
+        font-size: 2rem; /* Smaller section heading */
+    }
+
+    .category-list button {
+        padding: 8px 15px; /* Smaller button padding */
+        font-size: 0.9rem; /* Smaller button text */
+    }
+
+    .brawler-card h3 {
+        font-size: 1.6rem; /* Adjust Brawler name size */
+    }
+
+    .brawler-card p {
+        font-size: 1rem; /* Smaller description font */
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2rem; /* Further adjust for very small screens */
+    }
+
+    header p {
+        font-size: 0.9rem; /* Even smaller paragraph font */
+    }
+
+    h2 {
+        font-size: 1.8rem; /* Smaller section heading */
+    }
+
+    .category-list {
+        flex-direction: column; /* Stack buttons vertically */
+    }
+
+    .category-list button {
+        width: 100%; /* Full width buttons */
+    }
+
+    .brawler-card {
+        padding: 15px; /* Less padding for cards */
+    }
+
+    .brawler-card h3 {
+        font-size: 1.4rem; /* Adjust Brawler name size */
+    }
+
+    .brawler-card p {
+        font-size: 0.9rem; /* Smaller description font */
+    }
+
+    #brawler-stats {
+        display: flex; /* Change to flex layout for mobile */
+        overflow-x: auto; /* Enable horizontal scrolling */
+        gap: 1rem; /* Add space between cards */
+        padding: 10px; /* Adjust padding */
+        white-space: nowrap; /* Prevent wrapping of cards */
+    }
+}

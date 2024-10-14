@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brawl Stars Stats - Professional</title>
+    <link rel="stylesheet" href="Brawlstarsstats.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Brawl Stars Brawler Stats</h1>
+            <p>Discover the most used, most loved, and hardest to win with Brawlers in Brawl Stars!</p>
+        </div>
+    </header>
+
+    <main>
+        <section id="categories" class="container">
+            <h2>Select a Category:</h2>
+            <div class="category-list">
+                <button onclick="showCategory('most-used')">Most Used</button>
+                <button onclick="showCategory('most-loved')">Most Loved</button>
+                <button onclick="showCategory('most-hated')">Most Hated</button>
+                <button onclick="showCategory('easiest-win')">Easiest to Win With</button>
+                <button onclick="showCategory('hardest-win')">Hardest to Win With</button>
+            </div>
+        </section>
+
+        <section id="stats" class="container">
+            <h2>Brawler Stats</h2>
+            <div class="brawler-container"> <!-- Added wrapper for scrolling -->
+                <div id="brawler-stats" class="grid">
+                    <!-- Brawler stats will be dynamically inserted here -->
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Gloriousbrawl. All rights reserved.</p>
+    </footer>
+
+    <button id="scrollToTopBtn" onclick="scrollToTop()">
+        <img src="https://img.icons8.com/?size=100&id=39813&format=png&color=000000" alt="Scroll to Top" />
+    </button>
+
+    <script src="Brawlstarsstats.js"></script>
+</body>
+</html>

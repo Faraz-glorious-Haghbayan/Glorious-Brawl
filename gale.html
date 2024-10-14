@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="brawler.css">
+    <title>Gale Stats</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="glitch-text">Gale Stats</h1>
+        </div>
+        <div class="content">
+            <div class="brawler-image">
+                <img src="https://media.brawltime.ninja/brawlers/gale/model.webp?size=400" alt="Gale">
+            </div>
+            <div class="stats">
+                <h2>Stats</h2>
+                <div class="stat">
+                    <label for="health">Health:</label>
+                    <meter id="health" value="4500" min="0" max="10000">4500/10000</meter>
+                </div>
+                <div class="stat">
+                    <label for="damage">Damage:</label>
+                    <meter id="damage" value="1400" min="0" max="2500">1400/2500</meter>
+                </div>
+                <div class="stat">
+                    <label for="speed">Speed:</label>
+                    <meter id="speed" value="720" min="0" max="820">720/820</meter>
+                </div>
+                <div class="stat">
+                    <label for="reload">Reload Speed:</label>
+                    <meter id="reload" value="1800" min="0" max="2500">1800/2500</meter>
+                </div>
+                <div class="stat">
+                    <label for="range">Range:</label>
+                    <meter id="range" value="6" min="0" max="10">6/10</meter>
+                </div>
+            </div>
+        </div>
+        <div class="backbutton">
+            <button onclick="window.history.back()">Go Back</button>
+        </div>
+    </div>
+</body>
+</html>
