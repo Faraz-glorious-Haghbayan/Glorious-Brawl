@@ -212,7 +212,7 @@ header {
 .btn-primary {
     background-color: red;
     color: #ffffff;
-    width:70%;
+    width:45%;
     text-decoration: none;
     font-size: 1.2rem;
     border-radius: 5px;
@@ -312,6 +312,10 @@ header {
         gap: 10px;
         transform: translateX(100%);
         transition: transform 0.3s ease;
+    }
+
+    .btn-primary{
+        width:70%;
     }
 
     .nav-links.open {
