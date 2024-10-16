@@ -59,24 +59,28 @@ function scrollToTop() {
 
 
 
-    function changeVideoForMobile() {
-        const videoSource = document.getElementById('videoSource');
-        const videoElement = document.getElementById('background-video');
+   function changeVideoForMobile() {
+    const videoSource = document.getElementById('videoSource');
+    const videoElement = document.getElementById('background-video');
+    let newSrc = '';
 
-        if (window.innerWidth <= 768) {
-            // Mobile video source
-            videoSource.src = 'mobile.mp4'; // Replace with your mobile video link
-        } else {
-            // Desktop video source
-            videoSource.src = 'mobilevid.mp4'; // Your original PC video
-        }
-
-        // Reload the video element to apply the new source
-        videoElement.load();
+    if (window.innerWidth <= 768) {
+        // Mobile video source
+        newSrc = 'mobile.mp4'; // Replace with your mobile video link
+    } else {
+        // Desktop video source
+        newSrc = 'mobilevid.mp4'; // Replace with your desktop video link
     }
 
-    // Run the function when the page loads
-    window.onload = changeVideoForMobile;
+    // Only change the video source if it’s different from the current one
+    if (videoSource.src !== newSrc) {
+        videoSource.src = newSrc;
+        videoElement.load(); // Reload the video element to apply the new source
+    }
+}
 
-    // Run the function whenever the screen is resized (responsive behavior)
-    window.onresize = changeVideoForMobile;
+// Run the function when the page loads
+window.onload = changeVideoForMobile;
+
+// Run the function whenever the screen is resized (responsive behavior)
+window.onresize = changeVideoForMobile;
