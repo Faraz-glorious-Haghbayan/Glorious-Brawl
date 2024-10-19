@@ -650,7 +650,9 @@ p {
         width: 90%;
         height: 18vh;
     }
-
+    .btn-primary{
+        width:70%;
+    }
 
     .video-container{
         margin: auto;
